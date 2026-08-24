@@ -95,11 +95,11 @@
 
 <main class="flex-grow w-full max-w-container-max mx-auto">
 
-    <!-- NUEVO HERO SECTION ORIENTADO A VENTAS -->
-    <section class="min-h-[85vh] flex flex-col md:flex-row items-center justify-between px-margin-mobile md:px-margin-desktop pb-24 pt-24 md:pt-32 gap-12 relative overflow-hidden">
+   <!-- NUEVO HERO SECTION ORIENTADO A VENTAS (ADAPTADO A MÓVIL) -->
+    <section class="min-h-[85vh] flex flex-col md:flex-row items-center justify-between px-margin-mobile md:px-margin-desktop pb-16 pt-24 md:pt-32 gap-8 md:gap-12 relative">
         
-        <!-- Columna Izquierda: Texto de Ventas -->
-        <div class="flex-1 max-w-2xl z-10 flex flex-col justify-center mt-8 md:mt-0">
+        <!-- Columna Izquierda: Texto de Ventas (Abajo en móvil, Izquierda en PC) -->
+        <div class="flex-1 max-w-2xl z-10 flex flex-col justify-center order-2 md:order-1 text-center md:text-left items-center md:items-start">
             <span class="font-label-caps text-[10px] md:text-xs text-primary-container tracking-widest uppercase mb-4 block">
                 DISEÑADOR GRÁFICO FREELANCE
             </span>
@@ -109,7 +109,7 @@
             <p class="font-body-md text-base md:text-lg text-on-surface-variant max-w-xl mb-10">
                 Olvídate de lo genérico. Me especializo en branding, modelado 3D y publicidad digital para construir identidades visuales magnéticas que resuelven problemas reales y elevan el valor de tu marca.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4">
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                 <a href="https://wa.me/573024655165?text=Hola%20Elian,%20quiero%20cotizar%20un%20proyecto." target="_blank" class="bg-primary-container text-white font-label-caps text-xs px-8 py-4 hover:bg-[#d95000] hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-fit cursor-pointer">
                     COTIZAR PROYECTO
                     <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
@@ -120,16 +120,14 @@
             </div>
         </div>
 
-        <!-- Columna Derecha: Contenedor de Animación Mágica -->
-<div class="flex-1 w-full relative flex justify-center items-center h-[400px] md:h-[600px] border border-primary-container/20 bg-brand-charcoal/50 rounded-3xl overflow-hidden group">
-    
-    <!-- Resplandor mágico de fondo -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary-container/20 blur-[100px] rounded-full pointer-events-none z-0"></div>
-    
-    <!-- TU VIDEO DESDE CLOUDINARY -->
-    <video src="https://res.cloudinary.com/dpmby10ef/video/upload/v1787597467/WhatsApp_Video_2026-08-19_at_5.51.58_PM_ozhtcx.mp4" autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover md:object-contain z-10 drop-shadow-[0_0_15px_rgba(255,94,0,0.3)]"></video>
-
-</div>
+        <!-- Columna Derecha: Contenedor de Animación Mágica (Arriba en móvil, Derecha en PC) -->
+        <div class="flex-1 w-full relative flex justify-center items-center h-[350px] md:h-[600px] border border-primary-container/20 bg-brand-charcoal/50 rounded-3xl overflow-hidden group order-1 md:order-2">
+            
+            <!-- Resplandor mágico de fondo -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-64 md:h-64 bg-primary-container/20 blur-[80px] md:blur-[100px] rounded-full pointer-events-none z-0"></div>
+            
+            <!-- TU VIDEO DESDE CLOUDINARY (Con compatibilidad total iOS/Android) -->
+            <video src="https://res.cloudinary.com/dpmby10ef/video/upload/v1787597467/WhatsApp_Video_2026-08-19_at_5.51.58_PM_ozhtcx.mp4" autoplay loop muted playsinline webkit-playsinline class="absolute inset-0 w-full h-full object-cover md:object-contain z-10 drop-shadow-[0_0_15px_rgba(255,94,0,0.3)]"></video>
 
         </div>
     </section>
