@@ -875,6 +875,10 @@ video {
   max-height: 100%;
 }
 
+.min-h-\[350px\] {
+  min-height: 350px;
+}
+
 .min-h-\[500px\] {
   min-height: 500px;
 }
@@ -2192,6 +2196,10 @@ video {
     width: 60%;
   }
 
+  .md\:flex-1 {
+    flex: 1 1 0%;
+  }
+
   .md\:translate-y-6 {
     --tw-translate-y: 1.5rem;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -2250,11 +2258,6 @@ video {
 
   .md\:border-none {
     border-style: none;
-  }
-
-  .md\:object-contain {
-    -o-object-fit: contain;
-       object-fit: contain;
   }
 
   .md\:p-12 {
