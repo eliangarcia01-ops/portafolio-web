@@ -120,21 +120,15 @@
         </div>
 
         <!-- Columna Derecha: Contenedor de Animación Mágica -->
-        <div class="flex-1 w-full relative flex justify-center items-center h-[400px] md:h-[600px] border border-primary-container/20 bg-brand-charcoal/50 rounded-3xl overflow-hidden group">
-            
-            <!-- Resplandor mágico de fondo -->
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary-container/20 blur-[100px] rounded-full pointer-events-none"></div>
-            
-            <!-- INSTRUCCIONES: Reemplaza este div interno por tu etiqueta <video> cuando tengas la animación -->
-            <div class="text-center p-6 z-10 flex flex-col items-center">
-                <span class="material-symbols-outlined text-primary-container text-5xl mb-4 animate-bounce" style="font-variation-settings: 'FILL' 1;">auto_fix_high</span>
-                <p class="font-label-caps text-primary-container text-xs tracking-widest uppercase mb-2">Espacio para tu Animación</p>
-                <p class="font-body-md text-xs text-on-surface-variant max-w-xs mx-auto mb-4">
-                    Inserta aquí tu video (WebM transparente) o GIF levitando los programas.
-                </p>
-                <!-- Ejemplo de cómo deberás poner el código del video: -->
-                <!-- <video src="./assets/magia.webm" autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-contain z-20"></video> -->
-            </div>
+<div class="flex-1 w-full relative flex justify-center items-center h-[400px] md:h-[600px] border border-primary-container/20 bg-brand-charcoal/50 rounded-3xl overflow-hidden group">
+    
+    <!-- Resplandor mágico de fondo -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary-container/20 blur-[100px] rounded-full pointer-events-none z-0"></div>
+    
+    <!-- TU VIDEO DESDE CLOUDINARY -->
+    <video src="https://res.cloudinary.com/dpmby10ef/video/upload/v1787597467/WhatsApp_Video_2026-08-19_at_5.51.58_PM_ozhtcx.mp4" autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover md:object-contain z-10 drop-shadow-[0_0_15px_rgba(255,94,0,0.3)]"></video>
+
+</div>
 
         </div>
     </section>
