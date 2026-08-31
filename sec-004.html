@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dpmby10ef/image/upload/v1787598079/logo_u5nznw.png" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHMK19DJ0H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZHMK19DJ0H');
+    </script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Caso de Estudio: EL GRAN CHOFER</title>
+    
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Syne:wght@600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#1f1f1f",
+                        "background": "#0a0a0a",
+                        "surface": "#131313",
+                        "on-surface-variant": "#a3a3a3",
+                        "on-surface": "#f5f5f5",
+                        "brand-black": "#050505",
+                        "brand-charcoal": "#121212",
+                        "brand-yellow": "#F7E300", 
+                        "brand-red": "#ef4444",   
+                        "brand-blue": "#3b82f6",   
+                        "brand-cyan": "#22d3ee",
+                        "border-color": "#262626"
+                    },
+                    "spacing": {
+                        "margin-desktop": "60px",
+                        "margin-mobile": "20px",
+                        "section-gap": "100px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "container-max": "1400px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Syne", "sans-serif"],
+                        "display-xl": ["Syne", "sans-serif"],
+                        "body-md": ["Space Grotesk", "sans-serif"],
+                        "label-caps": ["Space Grotesk", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #050505; color: #e2e2e2; scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 0px; background: transparent; }
+        
+        .glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .lab-line { border-top: 1px solid rgba(247, 227, 0, 0.3); } 
+        .lab-border { border: 1px solid rgba(247, 227, 0, 0.3); } 
+        
+        /* Modales y Lightbox */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.95); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; backdrop-filter: blur(10px); }
+        .modal.show { display: flex; opacity: 1; }
+        .modal-content { max-width: 90%; max-height: 90vh; border-radius: 8px; box-shadow: 0 5px 30px rgba(247, 227, 0, 0.15); transform: scale(0.95); transition: transform 0.3s ease; object-fit: contain; }
+        .modal.show .modal-content { transform: scale(1); }
+        .close-modal { position: absolute; top: 20px; right: 40px; color: var(--brand-yellow); font-size: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; z-index: 1001; }
+        .close-modal:hover { color: #fff; }
+        
+        /* Componentes de Redes Sociales (Carruseles) */
+        .ig-carousel-wrapper { position: relative; width: 100%; aspect-ratio: 4 / 5; background-color: #1a1a1a; overflow: hidden; }
+        .ig-carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; width: 100%; height: 100%; scroll-behavior: smooth; -ms-overflow-style: none; scrollbar-width: none; }
+        .ig-carousel::-webkit-scrollbar { display: none; }
+        .ig-slide { flex: 0 0 100%; width: 100%; height: 100%; scroll-snap-align: center; display: flex; align-items: center; justify-content: center; position: relative;}
+        .ig-slide img { width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
+        .ig-nav-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255, 255, 255, 0.8); color: #000; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.5); transition: all 0.2s ease; }
+        .ig-nav-btn:hover { background: #F7E300; }
+        .prev-btn { left: 10px; } .next-btn { right: 10px; }
+        
+        /* Historias de IG */
+        .story-progress-container { position: absolute; top: 0; left: 0; width: 100%; display: flex; gap: 4px; padding: 10px 10px 0 10px; z-index: 10; }
+        .story-progress-segment { height: 2px; background: rgba(255, 255, 255, 0.4); flex-grow: 1; border-radius: 2px; }
+        .story-progress-segment.viewed, .story-progress-segment.active { background: #fff; }
+        .story-click-area { position: absolute; top: 60px; bottom: 70px; z-index: 5; cursor: pointer; }
+        .story-click-left { left: 0; width: 30%; }
+        .story-click-right { right: 0; width: 70%; }
+    </style>
+</head>
+<body class="font-body-md selection:bg-brand-yellow selection:text-black">
+
+    <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 md:h-20 bg-background/80 dark:bg-background/80 backdrop-blur-xl border-b border-white/10 glass-nav">
+        
+        <a href="./index.html" class="flex items-center gap-2 select-none opacity-80 hover:opacity-100 transition-opacity">
+            <span class="material-symbols-outlined text-brand-yellow text-sm md:text-base animate-pulse" style="font-variation-settings: 'FILL' 1;">north_west</span>
+            <span class="font-label-caps text-[8px] md:text-[10px] text-on-surface-variant tracking-widest uppercase mt-0.5">
+                VOLVER AL INICIO
+            </span>
+        </a>
+
+        <div class="hidden md:flex gap-8 items-center">
+            <a class="text-brand-yellow font-bold border-b-2 border-brand-yellow pb-1 uppercase font-label-caps text-[12px] cursor-pointer" href="#analisis" onclick="document.getElementById('analisis').scrollIntoView({behavior: 'smooth'}); return false;">Análisis</a>
+            <a class="text-on-surface-variant font-label-caps text-[12px] hover:text-on-surface uppercase hover:text-brand-yellow transition-all duration-300 cursor-pointer" href="#estrategia" onclick="document.getElementById('estrategia').scrollIntoView({behavior: 'smooth'}); return false;">Estrategia</a>
+            <a class="text-on-surface-variant font-label-caps text-[12px] hover:text-on-surface uppercase hover:text-brand-yellow transition-all duration-300 cursor-pointer" href="#ecosistema" onclick="document.getElementById('ecosistema').scrollIntoView({behavior: 'smooth'}); return false;">Ecosistema</a>
+        </div>
+        
+        <a class="hidden md:inline-block px-5 py-2 md:py-3 bg-transparent border border-brand-yellow text-brand-yellow font-label-caps text-label-caps uppercase hover:bg-brand-yellow hover:text-black transition-all duration-300" 
+           href="./sec-005.html">
+            SIGUIENTE PROYECTO
+        </a>
+    </nav>
+
+    <main>
+        <section class="relative w-full h-[70vh] md:h-[80vh] min-h-[500px] md:min-h-[600px] flex flex-col justify-end pb-12 md:pb-16 px-margin-mobile md:px-margin-desktop pt-24 border-b border-white/10">
+            <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-brand-yellow/10 via-brand-black to-brand-black z-0 pointer-events-none"></div>
+            
+            <div class="relative z-20 flex flex-col gap-2">
+                <span class="font-label-caps text-[10px] md:text-[12px] text-brand-yellow tracking-widest uppercase bg-brand-yellow/10 w-fit px-3 py-1 border border-brand-yellow/30">[ CASO DE ESTUDIO ]</span>
+                <span class="font-label-caps text-[8px] md:text-[10px] text-on-surface-variant tracking-widest uppercase mt-2">ACADEMIA DE AUTOMOVILISMO</span>
+            </div>
+
+            <div class="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-start mt-8">
+                <h1 class="font-headline-lg text-[60px] sm:text-[80px] md:text-[100px] lg:text-[120px] text-on-surface uppercase mb-0 leading-[0.9] break-words tracking-tighter font-black">
+                    EL GRAN<br/><span class="text-brand-yellow drop-shadow-lg block">CHOFER</span>
+                </h1>
+                
+                <div class="mt-8 md:mt-12 flex flex-col md:flex-row gap-4 md:gap-12 items-start w-full border-t border-white/10 pt-6">
+                    <span class="font-label-caps text-[10px] text-brand-yellow tracking-widest uppercase shrink-0 mt-1">RESUMEN_EJECUTIVO</span>
+                    <p class="font-body-md text-sm md:text-base lg:text-lg text-on-surface-variant max-w-3xl leading-relaxed">
+                        Dinámicas de mercado, rentabilidad y psicología del conductor novato en Colombia. Una campaña que transforma el miedo y la ansiedad del tráfico caótico en un entrenamiento táctico de supervivencia urbana.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="w-full py-16 md:py-section-gap px-margin-mobile md:px-margin-desktop bg-brand-charcoal relative" id="analisis">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-12 md:mb-16 pb-6 lab-line">
+                    <h2 class="font-headline-lg text-[40px] md:text-[64px] text-on-surface uppercase tracking-tighter leading-none">
+                        Parque <span class="text-brand-yellow">Automotor</span>
+                    </h2>
+                    <p class="font-label-caps text-[10px] md:text-xs text-on-surface-variant tracking-widest mt-4">CIFRAS RUNT FEB 2026 | CONTEXTO NACIONAL</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-gutter">
+                    <div class="bg-brand-black border border-white/10 p-6 md:p-8 flex flex-col justify-center items-center text-center group hover:border-brand-yellow/50 transition-colors">
+                        <span class="text-brand-yellow font-headline-lg text-[50px] md:text-[64px] font-black leading-none mb-2">21.3M</span>
+                        <h3 class="font-label-caps text-xs md:text-sm text-white tracking-widest uppercase mb-4">Vehículos Activos</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant">El 63% (13.5M) son motocicletas. El crecimiento sostenido garantiza una demanda estructural para la categoría.</p>
+                    </div>
+
+                    <div class="bg-brand-black border border-white/10 p-6 md:p-8 flex flex-col justify-center items-center text-center group hover:border-brand-red/50 transition-colors border-t-4 border-t-brand-red">
+                        <span class="text-brand-red font-headline-lg text-[50px] md:text-[64px] font-black leading-none mb-2">47%</span>
+                        <h3 class="font-label-caps text-xs md:text-sm text-white tracking-widest uppercase mb-4">Evasión SOAT</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant">Fuerte cultura de informalidad. A esto se suma que el 56% circula sin Revisión Técnico Mecánica.</p>
+                    </div>
+
+                    <div class="bg-brand-black border border-white/10 p-6 md:p-8 flex flex-col justify-center items-center text-center group hover:border-brand-blue/50 transition-colors border-t-4 border-t-brand-blue">
+                        <span class="text-brand-blue font-headline-lg text-[50px] md:text-[64px] font-black leading-none mb-2">7/10</span>
+                        <h3 class="font-label-caps text-xs md:text-sm text-white tracking-widest uppercase mb-4">Infracciones</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant">En Cali (contexto local), 7 de cada 10 conductores cometen infracciones. El entorno es altamente hostil.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="w-full py-16 md:py-section-gap px-margin-mobile md:px-margin-desktop bg-brand-black relative" id="estrategia">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-12 md:mb-16">
+                    <span class="font-label-caps text-[10px] text-brand-yellow tracking-widest block mb-4">AUDIENCIAS CLAVE</span>
+                    <h2 class="font-headline-lg text-[40px] md:text-[64px] text-on-surface uppercase leading-none tracking-tighter">Perfiles Psicológicos</h2>
+                </div>
+
+                <div class="flex flex-col gap-10 md:gap-12">
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 bg-brand-charcoal border border-border-color p-0 overflow-hidden group">
+                        <div class="w-full md:w-2/5">
+                            <img src="https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=800&q=80" alt="Iniciador Ansioso" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 min-h-[250px] md:min-h-[300px]">
+                        </div>
+                        <div class="w-full md:w-3/5 p-6 md:p-10 flex flex-col justify-center">
+                            <span class="font-label-caps text-[10px] md:text-[12px] text-brand-yellow tracking-widest mb-2">TARGET 01 / INICIADOR ANSIOSO</span>
+                            <h3 class="font-headline-lg text-xl md:text-3xl text-white mb-4 md:mb-6 border-l-4 border-brand-yellow pl-4">"El pase no es un plástico; es mi pasaporte a la vida adulta y a no depender."</h3>
+                            <p class="font-body-md text-sm md:text-base text-on-surface-variant mb-3"><strong class="text-white font-bold">El Miedo Social:</strong> "Apagar el carro en una loma no da miedo por la máquina, da terror por la humillación pública."</p>
+                            <p class="font-body-md text-sm md:text-base text-on-surface-variant"><strong class="text-white font-bold">El Deseo Oculto:</strong> Adquirir un estatus de independencia total frente a su círculo.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row-reverse gap-6 md:gap-8 bg-brand-charcoal border border-border-color p-0 overflow-hidden group">
+                        <div class="w-full md:w-2/5">
+                            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=800&q=80" alt="La Heredera" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 min-h-[250px] md:min-h-[300px]">
+                        </div>
+                        <div class="w-full md:w-3/5 p-6 md:p-10 flex flex-col justify-center text-left md:text-right items-start md:items-end">
+                            <span class="font-label-caps text-[10px] md:text-[12px] text-brand-blue tracking-widest mb-2">TARGET 02 / LA HEREDERA</span>
+                            <h3 class="font-headline-lg text-xl md:text-3xl text-white mb-4 md:mb-6 border-l-4 md:border-l-0 md:border-r-4 border-brand-blue pl-4 md:pl-0 md:pr-4">"La bocina del de atrás no es una alerta, es un arma de presión psicológica."</h3>
+                            <p class="font-body-md text-sm md:text-base text-on-surface-variant mb-3"><strong class="text-white font-bold">El Pánico Urbano:</strong> "Sentarme al volante sola es enfrentarme a glorietas sin ley y a la angustia constante."</p>
+                            <p class="font-body-md text-sm md:text-base text-on-surface-variant"><strong class="text-white font-bold">La Paradoja:</strong> El choque emocional entre la ilusión de la libertad y el peso gigante de la responsabilidad.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row gap-6 md:gap-8 bg-brand-charcoal border border-border-color p-0 overflow-hidden group">
+                        <div class="w-full md:w-2/5">
+                            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" alt="Los Padres" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 min-h-[250px] md:min-h-[300px]">
+                        </div>
+                        <div class="w-full md:w-3/5 p-6 md:p-10 flex flex-col justify-center">
+                            <span class="font-label-caps text-[10px] md:text-[12px] text-brand-red tracking-widest mb-2">TARGET 03 / LOS PADRES</span>
+                            <h3 class="font-headline-lg text-xl md:text-3xl text-white mb-4 md:mb-6 border-l-4 border-brand-red pl-4">"Pagar una academia es tercerizar la paciencia para salvar la relación."</h3>
+                            <p class="font-body-md text-sm md:text-base text-on-surface-variant mb-3"><strong class="text-white font-bold">El Verdadero Temor:</strong> Tienen pánico de que sus hijos se bloqueen ante la imprudencia de terceros.</p>
+                            <p class="font-body-md text-sm md:text-base text-on-surface-variant"><strong class="text-white font-bold">Qué Compran Realmente:</strong> Paz Mental. Saber que hay un experto con un doble pedal de freno al lado de su hijo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="w-full py-24 md:py-32 px-margin-mobile md:px-margin-desktop bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-cyan/10 via-brand-black to-brand-black relative text-center border-t border-b border-white/10">
+            <div class="max-w-5xl mx-auto relative z-10">
+                <span class="font-label-caps text-[10px] md:text-xs text-brand-cyan tracking-[0.2em] border border-brand-cyan/30 px-4 py-2 rounded-sm mb-6 md:mb-8 inline-block">LA GRAN IDEA</span>
+                
+                <h2 class="font-headline-lg text-[32px] md:text-[60px] lg:text-[70px] text-white leading-[1.1] tracking-tighter mb-8 md:mb-10">
+                    Porque el tráfico te convierte en una bestia...<br>
+                    <span class="text-brand-cyan block mt-2">NO SEAS UNA DE ELLAS.</span>
+                </h2>
+                
+                <p class="font-body-md text-base md:text-lg lg:text-xl text-on-surface-variant max-w-3xl mx-auto leading-relaxed">
+                    El tráfico no es un accidente, es un ecosistema. Deja de ser la presa que reacciona con pánico y despierta el instinto del depredador alfa: <strong class="text-brand-yellow">OBSERVA, IDENTIFICA Y ANTICIPA.</strong> En El Gran Chofer te enseñamos a dominar la mente antes que la máquina.
+                </p>
+            </div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-headline-lg text-[120px] md:text-[250px] lg:text-[400px] text-white/[0.02] pointer-events-none whitespace-nowrap z-0">INSTINTO</div>
+        </section>
+
+        <section class="w-full py-16 md:py-section-gap px-margin-mobile md:px-margin-desktop bg-brand-black relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-12 md:mb-16 pb-6 lab-line border-brand-cyan/30">
+                    <h2 class="font-headline-lg text-[40px] md:text-[64px] text-on-surface uppercase tracking-tighter leading-none">
+                        La Fauna <span class="text-brand-cyan">Urbana</span>
+                    </h2>
+                    <p class="font-label-caps text-[10px] md:text-xs text-on-surface-variant tracking-widest mt-4">IDENTIFICACIÓN DE CLANES DEL ASFALTO</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                    <div class="bg-brand-charcoal p-6 md:p-8 border border-white/5 hover:border-brand-cyan/50 transition-colors">
+                        <i class="fa-solid fa-motorcycle text-3xl md:text-4xl text-brand-cyan mb-4 md:mb-6"></i>
+                        <h3 class="font-headline-lg text-lg md:text-xl text-white uppercase mb-2">Los Depredadores</h3>
+                        <p class="font-label-caps text-[10px] md:text-xs text-brand-cyan mb-3 md:mb-4">(Punto Ciego)</p>
+                        <p class="font-body-md text-sm text-on-surface-variant">Ataques laterales imprevistos y sin direccionales. Exigen que el alumno domine <strong>estrategias de escape</strong> y la cesión de paso proactivo.</p>
+                    </div>
+                    <div class="bg-brand-charcoal p-6 md:p-8 border border-white/5 hover:border-brand-red/50 transition-colors">
+                        <i class="fa-solid fa-truck-fast text-3xl md:text-4xl text-brand-red mb-4 md:mb-6"></i>
+                        <h3 class="font-headline-lg text-lg md:text-xl text-white uppercase mb-2">La Estampida</h3>
+                        <p class="font-label-caps text-[10px] md:text-xs text-brand-red mb-3 md:mb-4">(Tráfico Pesado)</p>
+                        <p class="font-body-md text-sm text-on-surface-variant">El caos del embotellamiento sin distancia de seguridad. Obliga a aplicar la <strong>regla de los 3 segundos</strong> para proteger el espacio delantero.</p>
+                    </div>
+                    <div class="bg-brand-charcoal p-6 md:p-8 border border-white/5 hover:border-brand-yellow/50 transition-colors">
+                        <i class="fa-solid fa-traffic-light text-3xl md:text-4xl text-brand-yellow mb-4 md:mb-6"></i>
+                        <h3 class="font-headline-lg text-lg md:text-xl text-white uppercase mb-2">Los Territoriales</h3>
+                        <p class="font-label-caps text-[10px] md:text-xs text-brand-yellow mb-3 md:mb-4">(Intersecciones)</p>
+                        <p class="font-body-md text-sm text-on-surface-variant">Se adueñan de cruces, semáforos y glorietas. Requieren que el alumno aplique un <strong>posicionamiento preventivo</strong> constante.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="w-full py-16 md:py-section-gap px-margin-mobile md:px-margin-desktop bg-brand-charcoal border-t border-white/10" id="ecosistema">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-12 md:mb-16 text-center">
+                    <span class="font-label-caps text-[10px] md:text-xs text-brand-yellow tracking-widest block mb-3 md:mb-4">DESPLIEGUE TÁCTICO</span>
+                    <h2 class="font-headline-lg text-[40px] md:text-[64px] text-on-surface uppercase leading-none tracking-tighter">Ecosistema Digital</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-start">
+                    
+                    <!-- Carrusel IG -->
+                    <div class="flex flex-col items-center w-full">
+                        <h3 class="font-label-caps text-xs md:text-sm text-brand-yellow tracking-widest uppercase mb-4 md:mb-6 border-b border-brand-yellow/30 pb-2 w-full text-center">Carrusel Formativo</h3>
+                        
+                        <div class="w-full max-w-[400px] bg-black border border-border-color rounded-lg overflow-hidden shadow-2xl">
+                            <div class="flex items-center justify-between p-3 bg-black">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-brand-charcoal border border-border-color overflow-hidden flex items-center justify-center p-1">
+                                        <img src="https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1781806635/Firefly_Gemini_Flash_cambiar_el_color_de_las_letras_a_blanco_las_mismas_letras_y_el_logo_dejarlo_amarillo_187995_lixulm.png" alt="Avatar" class="w-full h-full object-contain">
+                                    </div>
+                                    <div class="text-sm font-bold text-white">elgranchofer_oficial <span class="font-normal text-on-surface-variant text-xs ml-1">• 2h</span></div>
+                                </div>
+                                <i class="fa-solid fa-ellipsis text-white cursor-pointer"></i>
+                            </div>
+
+                            <div class="ig-carousel-wrapper">
+                                <button class="ig-nav-btn prev-btn" onclick="scrollIgCarousel(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                                
+                                <div class="ig-carousel" id="igCarousel" onscroll="updateIgDots()">
+                                    <div class="ig-slide"><img class="lightbox-trigger" src="https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1781802872/Mesa_de_trabajo_3_c1mrko.png" alt="Post 1"></div>
+                                    <div class="ig-slide"><img class="lightbox-trigger" src="https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1781802875/Mesa_de_trabajo_1_tmzgxz.png" alt="Post 2"></div>
+                                    <div class="ig-slide"><img class="lightbox-trigger" src="https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1781802874/Mesa_de_trabajo_1-2_holnib.png" alt="Post 3"></div>
+                                    <div class="ig-slide"><img class="lightbox-trigger" src="https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1781802874/Mesa_de_trabajo_1-1_ajdbbg.png" alt="Post 4"></div>
+                                    <div class="ig-slide"><img class="lightbox-trigger" src="https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1781802872/Mesa_de_trabajo_4_tys9gk.png" alt="Post 5"></div>
+                                    <div class="ig-slide"><img class="lightbox-trigger" src="https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1781802875/Mesa_de_trabajo_2_kbieqc.png" alt="Post 6"></div>
+                                </div>
+
+                                <button class="ig-nav-btn next-btn" onclick="scrollIgCarousel(1)"><i class="fa-solid fa-chevron-right"></i></button>
+                            </div>
+
+                            <div class="bg-black pt-2 pb-4">
+                                <div class="flex justify-between items-center px-4 pb-1">
+                                    <div class="flex gap-4 text-xl text-white">
+                                        <i class="fa-regular fa-heart cursor-pointer hover:text-on-surface-variant"></i>
+                                        <i class="fa-regular fa-comment cursor-pointer hover:text-on-surface-variant"></i>
+                                        <i class="fa-regular fa-paper-plane cursor-pointer hover:text-on-surface-variant"></i>
+                                    </div>
+                                    <div class="flex justify-center gap-1" id="igDots">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-brand-blue transition-colors ig-dot active"></div>
+                                        <div class="w-1.5 h-1.5 rounded-full bg-[#333] transition-colors ig-dot"></div>
+                                        <div class="w-1.5 h-1.5 rounded-full bg-[#333] transition-colors ig-dot"></div>
+                                        <div class="w-1.5 h-1.5 rounded-full bg-[#333] transition-colors ig-dot"></div>
+                                        <div class="w-1.5 h-1.5 rounded-full bg-[#333] transition-colors ig-dot"></div>
+                                        <div class="w-1.5 h-1.5 rounded-full bg-[#333] transition-colors ig-dot"></div>
+                                    </div>
+                                    <div class="text-xl text-white cursor-pointer hover:text-on-surface-variant"><i class="fa-regular fa-bookmark"></i></div>
+                                </div>
+                                <div class="px-4 text-sm font-bold text-white mb-1">8,402 Me gusta</div>
+                                <div class="px-4 text-sm text-on-surface-variant leading-snug">
+                                    <strong class="text-white">elgranchofer_oficial</strong> No te unas a la manada. Domina la vía con nosotros.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Historias IG -->
+                    <div class="flex flex-col items-center w-full mt-6 md:mt-0">
+                        <h3 class="font-label-caps text-xs md:text-sm text-brand-yellow tracking-widest uppercase mb-4 md:mb-6 border-b border-brand-yellow/30 pb-2 w-full text-center">Interacción (Historias)</h3>
+                        
+                        <div class="w-full max-w-[320px] aspect-[9/16] bg-brand-charcoal rounded-xl border border-border-color shadow-2xl relative overflow-hidden flex flex-col">
+                            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 z-[2] pointer-events-none"></div>
+                            
+                            <div class="story-progress-container">
+                                <div class="story-progress-segment active" id="story-seg-0"></div>
+                                <div class="story-progress-segment" id="story-seg-1"></div>
+                            </div>
+
+                            <div class="absolute top-4 left-0 w-full px-3 flex items-center justify-between z-[3] pointer-events-none">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-8 h-8 rounded-full bg-brand-charcoal border border-border-color overflow-hidden flex items-center justify-center p-1">
+                                        <img src="https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1781806635/Firefly_Gemini_Flash_cambiar_el_color_de_las_letras_a_blanco_las_mismas_letras_y_el_logo_dejarlo_amarillo_187995_lixulm.png" alt="Avatar" class="w-full h-full object-contain">
+                                    </div>
+                                    <div class="text-xs font-bold text-white">elgranchofer_oficial <span class="font-normal text-on-surface-variant ml-1" id="story-time">5h</span></div>
+                                </div>
+                                <i class="fa-solid fa-ellipsis text-white"></i>
+                            </div>
+
+                            <div class="story-click-area story-click-left" onclick="prevStory()"></div>
+                            <div class="story-click-area story-click-right" onclick="nextStory()"></div>
+
+                            <img id="story-main-img" class="absolute inset-0 w-full h-full object-cover z-[1]" src="https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1781814716/Mesa_de_trabajo_1_on7byw.png" alt="Historia">
+
+                            <div class="absolute bottom-0 left-0 w-full p-4 flex items-center gap-3 z-[6]">
+                                <input type="text" class="flex-grow bg-transparent border border-white/50 rounded-full px-4 py-2 text-sm text-white placeholder-white/70 outline-none focus:border-white" placeholder="Enviar mensaje...">
+                                <i class="fa-regular fa-heart text-white text-xl cursor-pointer"></i>
+                                <i class="fa-regular fa-paper-plane text-white text-xl cursor-pointer"></i>
+                            </div>
+                        </div>
+                        <p class="font-body-md text-[10px] md:text-xs text-on-surface-variant italic text-center mt-3">*Haz clic en los lados para interactuar</p>
+                    </div>
+
+                    <!-- Meta Ad -->
+                    <div class="flex flex-col items-center w-full mt-6 md:mt-0">
+                        <h3 class="font-label-caps text-xs md:text-sm text-brand-yellow tracking-widest uppercase mb-4 md:mb-6 border-b border-brand-yellow/30 pb-2 w-full text-center">Pauta (Conversión)</h3>
+                        
+                        <div class="w-full max-w-[400px] bg-black border border-border-color rounded-lg overflow-hidden shadow-2xl">
+                            <div class="flex items-center justify-between p-3 bg-black">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-brand-charcoal border border-border-color overflow-hidden flex items-center justify-center p-1">
+                                        <img src="https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1781806635/Firefly_Gemini_Flash_cambiar_el_color_de_las_letras_a_blanco_las_mismas_letras_y_el_logo_dejarlo_amarillo_187995_lixulm.png" alt="Avatar" class="w-full h-full object-contain">
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <div class="text-sm font-bold text-white leading-none">elgranchofer_oficial</div>
+                                        <span class="text-[10px] text-on-surface-variant mt-0.5">Publicidad</span>
+                                    </div>
+                                </div>
+                                <i class="fa-solid fa-ellipsis text-white cursor-pointer"></i>
+                            </div>
+
+                            <div class="relative w-full aspect-[4/5] bg-brand-charcoal">
+                                <span class="absolute bottom-3 left-3 bg-brand-yellow text-black font-label-caps text-[10px] font-bold px-2 py-1 rounded shadow-lg z-10 pointer-events-none">CUPO</span>
+                                <img class="lightbox-trigger absolute inset-0 w-full h-full object-cover" src="https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1781816603/Mesa_de_trabajo_3_qqjmj2.png" alt="Meta Ad">
+                            </div>
+
+                            <div class="bg-brand-charcoal p-3 flex justify-between items-center border-t border-b border-border-color">
+                                <span class="text-sm font-bold text-white">Matrículas Temporada Abiertas</span>
+                                <a href="#" class="bg-brand-blue text-white text-[10px] md:text-xs font-bold px-3 py-2 rounded">Registrarte</a>
+                            </div>
+
+                            <div class="bg-black pt-3 pb-4">
+                                <div class="flex justify-between items-center px-4 pb-2">
+                                    <div class="flex gap-4 text-xl text-white">
+                                        <i class="fa-regular fa-heart cursor-pointer hover:text-on-surface-variant"></i>
+                                        <i class="fa-regular fa-comment cursor-pointer hover:text-on-surface-variant"></i>
+                                        <i class="fa-solid fa-share cursor-pointer hover:text-on-surface-variant"></i>
+                                    </div>
+                                </div>
+                                <div class="px-4 text-sm font-bold text-white mb-1">12.5K Me gusta</div>
+                                <div class="px-4 text-sm text-on-surface-variant leading-snug">
+                                    <strong class="text-white">elgranchofer_oficial</strong> ¿Cansado de los depredadores del asfalto? Aprende inteligencia táctica y manejo defensivo. Inscríbete hoy.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="w-full py-16 md:py-section-gap px-margin-mobile md:px-margin-desktop bg-brand-black">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-12 md:mb-16 pb-6 lab-line border-brand-yellow/30">
+                    <h2 class="font-headline-lg text-[40px] md:text-[64px] text-on-surface uppercase tracking-tighter leading-none">
+                        Invasión <span class="text-brand-yellow">Urbana</span>
+                    </h2>
+                    <p class="font-label-caps text-[10px] md:text-xs text-on-surface-variant tracking-widest mt-4">PUNTOS DE CONTACTO (OOH & MERCH)</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <div class="bg-brand-charcoal border border-border-color rounded-lg overflow-hidden group hover:border-brand-yellow/50 transition-all">
+                        <div class="aspect-[16/10] bg-black overflow-hidden relative">
+                            <img class="lightbox-trigger w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 cursor-pointer opacity-80 group-hover:opacity-100" src="https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1781799048/2cbb71d6-1495-4fa6-98bb-c2ef8e558187_gtxtio.png" alt="Carteles">
+                        </div>
+                        <div class="p-3 md:p-4 text-center font-label-caps text-xs md:text-sm text-white tracking-widest">Carteles Urbanos</div>
+                    </div>
+                    <div class="bg-brand-charcoal border border-border-color rounded-lg overflow-hidden group hover:border-brand-yellow/50 transition-all">
+                        <div class="aspect-[16/10] bg-black overflow-hidden relative">
+                            <img class="lightbox-trigger w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 cursor-pointer opacity-80 group-hover:opacity-100" src="https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1781800108/f03f40a4-2421-4d28-b224-3f00626ac971_o9d8hd.png" alt="Mupi">
+                        </div>
+                        <div class="p-3 md:p-4 text-center font-label-caps text-xs md:text-sm text-white tracking-widest">Paradero / Mupi</div>
+                    </div>
+                    <div class="bg-brand-charcoal border border-border-color rounded-lg overflow-hidden group hover:border-brand-yellow/50 transition-all">
+                        <div class="aspect-[16/10] bg-black overflow-hidden relative">
+                            <img class="lightbox-trigger w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 cursor-pointer opacity-80 group-hover:opacity-100" src="https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1781799744/generate_image_nano_banana_2-3ee32992-e592-44bc-97c9-7176f220460e_xnl47k.png" alt="Merch 1">
+                        </div>
+                        <div class="p-3 md:p-4 text-center font-label-caps text-xs md:text-sm text-white tracking-widest">Merch Oficial (1)</div>
+                    </div>
+                    <div class="bg-brand-charcoal border border-border-color rounded-lg overflow-hidden group hover:border-brand-yellow/50 transition-all">
+                        <div class="aspect-[16/10] bg-black overflow-hidden relative">
+                            <img class="lightbox-trigger w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 cursor-pointer opacity-80 group-hover:opacity-100" src="https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1781799744/generate_image_nano_banana_2-391f92bd-e770-463f-add6-e632cb41356e_gwrfom.png" alt="Merch 2">
+                        </div>
+                        <div class="p-3 md:p-4 text-center font-label-caps text-xs md:text-sm text-white tracking-widest">Merch Oficial (2)</div>
+                    </div>
+                    <div class="bg-brand-charcoal border border-border-color rounded-lg overflow-hidden group hover:border-brand-yellow/50 transition-all">
+                        <div class="aspect-[16/10] bg-black overflow-hidden relative">
+                            <img class="lightbox-trigger w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 cursor-pointer opacity-80 group-hover:opacity-100" src="https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1781727227/3be5988e-1b3e-4af2-abfc-c78c60188aca_fcu4pw.png" alt="Merch 3">
+                        </div>
+                        <div class="p-3 md:p-4 text-center font-label-caps text-xs md:text-sm text-white tracking-widest">Merch Oficial (3)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="w-full py-16 md:py-section-gap px-margin-mobile md:px-margin-desktop bg-brand-charcoal border-t border-white/10">
+            <div class="max-w-7xl mx-auto">
+                <div class="bg-brand-black border border-border-color border-l-4 border-l-brand-yellow rounded-xl p-6 md:p-10 overflow-hidden relative">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+                        
+                        <div class="w-full aspect-[4/3] grid grid-cols-3 grid-rows-2 gap-1 bg-black rounded-lg border border-border-color overflow-hidden shadow-2xl">
+                            <div class="col-span-2 row-span-2 overflow-hidden bg-brand-charcoal relative group">
+                                <img class="lightbox-trigger absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity cursor-pointer" src="https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1781799045/38e35a02-9369-46e8-94ef-8ad6c56c63d1_lmrisg.png" alt="PR 1">
+                            </div>
+                            <div class="col-span-1 row-span-1 overflow-hidden bg-brand-charcoal relative group">
+                                <img class="lightbox-trigger absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity cursor-pointer" src="https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1781799044/438a10ef-029c-47e6-9bcd-7cb740dff9bd_n6bhwb.png" alt="PR 2">
+                            </div>
+                            <div class="col-span-1 row-span-1 overflow-hidden bg-brand-charcoal relative group">
+                                <img class="lightbox-trigger absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity cursor-pointer" src="https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1781799047/cf1b3099-90b8-4d0c-8026-239bd37f06dc_wjkorl.png" alt="PR 3">
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col text-left">
+                            <span class="font-label-caps text-[10px] bg-brand-yellow text-black px-2 py-1 rounded w-fit font-bold tracking-widest mb-3 md:mb-4">EVENTO BTL & PRENSA</span>
+                            <h2 class="font-headline-lg text-3xl md:text-5xl text-white uppercase leading-none tracking-tighter mb-3 md:mb-4">Lanzamiento Oficial</h2>
+                            <p class="font-label-caps text-xs md:text-sm text-brand-yellow tracking-widest mb-4 md:mb-6">TEMPORADA JUNIO-JULIO 2026 | CALI</p>
+                            <p class="font-body-md text-sm md:text-base text-on-surface-variant leading-relaxed mb-6 md:mb-8">
+                                Experiencia teatral y comedia física para medir la tolerancia vial en tiempo real ("Safari Análogo"). ¿Vas a dejar que el trancón te convierta en uno de ellos? Asegura tu cupo y transforma la agresividad en verdadera inteligencia al volante.
+                            </p>
+                            <a href="https://www.elgranchofer.com/" target="_blank" class="bg-brand-yellow text-black font-label-caps text-xs md:text-sm font-bold px-6 py-3 md:px-8 md:py-4 rounded-full w-fit hover:bg-white transition-colors duration-300 shadow-[0_0_20px_rgba(247,227,0,0.3)]">INSCRIBIRSE AHORA</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Redirección al siguiente proyecto (Corregido y Compacto) -->
+        <a class="w-full h-[40vh] md:h-[50vh] bg-brand-yellow flex justify-center items-center group hover:bg-white transition-colors duration-700 relative overflow-hidden block border-t border-border-color"
+           href="./sec-005.html">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.1)_0%,transparent_100%)] pointer-events-none"></div>
+
+            <div class="relative z-10 font-headline-lg text-[48px] sm:text-[70px] md:text-[100px] text-brand-black uppercase text-center font-black tracking-tighter w-full block leading-none group-hover:scale-[1.02] transition-transform duration-500 mix-blend-multiply px-4">
+                VER<br/>SIGUIENTE<br/>PROYECTO
+            </div>
+
+            <div class="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 font-label-caps text-[8px] md:text-[10px] text-brand-black tracking-widest uppercase opacity-50 group-hover:opacity-100 transition-opacity whitespace-nowrap font-bold">
+                [ IR A: PASAPORTE DEL CAMBIO ]
+            </div>
+        </a>
+
+    </main>
+
+    <footer class="w-full py-12 md:py-16 px-margin-mobile md:px-margin-desktop flex flex-col items-center text-center gap-unit bg-brand-black border-t border-white/10 relative">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-6 md:h-8 bg-brand-yellow/50"></div>
+        <h2 class="font-headline-lg text-[20px] md:text-[28px] font-black text-on-surface uppercase mb-6 md:mb-8 tracking-tighter mt-4 md:mt-0">
+            EL GRAN CHOFER<br/>
+            <span class="text-brand-yellow text-xs md:text-sm font-body-md font-normal tracking-[0.3em] mt-1 block opacity-80 uppercase">Academia de Automovilismo</span>
+        </h2>
+        
+        <div class="flex flex-wrap justify-center gap-6 md:gap-10 mb-8 md:mb-10">
+            <a class="text-on-surface-variant font-label-caps text-[10px] hover:text-brand-yellow transition-colors duration-300 uppercase tracking-widest" href="#">Instagram</a>
+            <a class="text-on-surface-variant font-label-caps text-[10px] hover:text-brand-yellow transition-colors duration-300 uppercase tracking-widest" href="#">Behance</a>
+            <a class="text-on-surface-variant font-label-caps text-[10px] hover:text-brand-yellow transition-colors duration-300 uppercase tracking-widest" href="#">LinkedIn</a>
+        </div>
+        <p class="font-label-caps text-[8px] md:text-[10px] text-on-surface-variant uppercase tracking-widest opacity-40">
+            SYS.LOG ©2026 ELIAN GARCÍA. CALI, COLOMBIA. FIN DE ARCHIVO.
+        </p>
+    </footer>
+
+    <div id="imageModal" class="modal">
+        <span class="close-modal material-symbols-outlined">close</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // 1. LIGHTBOX SCRIPT
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
+            const closeBtn = document.querySelector(".close-modal");
+            const images = document.querySelectorAll('.lightbox-trigger');
+
+            images.forEach(img => {
+                img.addEventListener('click', function() {
+                    modal.classList.add('show');
+                    modalImg.src = this.src; 
+                });
+            });
+
+            closeBtn.addEventListener('click', function() {
+                modal.classList.remove('show');
+            });
+
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('show');
+                }
+            });
+
+            // 2. HISTORIA IG SCRIPT
+            const stories = [
+                { src: "https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1781814716/Mesa_de_trabajo_1_on7byw.png", time: "5h" },
+                { src: "https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1781814729/story_2_a8gtch.jpg", time: "3h" }
+            ];
+            let currentStoryIndex = 0;
+
+            window.updateStory = function() {
+                const img = document.getElementById('story-main-img');
+                const time = document.getElementById('story-time');
+                const segments = [document.getElementById('story-seg-0'), document.getElementById('story-seg-1')];
+
+                img.src = stories[currentStoryIndex].src;
+                time.textContent = stories[currentStoryIndex].time;
+
+                segments.forEach((seg, index) => {
+                    if (index < currentStoryIndex) {
+                        seg.className = 'story-progress-segment viewed';
+                    } else if (index === currentStoryIndex) {
+                        seg.className = 'story-progress-segment active';
+                    } else {
+                        seg.className = 'story-progress-segment';
+                    }
+                });
+            }
+
+            window.nextStory = function() {
+                if (currentStoryIndex < stories.length - 1) {
+                    currentStoryIndex++;
+                } else {
+                    currentStoryIndex = 0; 
+                }
+                updateStory();
+            }
+
+            window.prevStory = function() {
+                if (currentStoryIndex > 0) {
+                    currentStoryIndex--;
+                } else {
+                    currentStoryIndex = stories.length - 1; 
+                }
+                updateStory();
+            }
+
+            // 3. CARRUSEL IG SCRIPT
+            window.scrollIgCarousel = function(direction) {
+                const carousel = document.getElementById('igCarousel');
+                const slideWidth = carousel.clientWidth;
+                carousel.scrollBy({ left: direction * slideWidth, behavior: 'smooth' });
+            }
+
+            window.updateIgDots = function() {
+                const carousel = document.getElementById('igCarousel');
+                const slideWidth = carousel.clientWidth;
+                const scrollLeft = carousel.scrollLeft;
+                const currentIndex = Math.round(scrollLeft / slideWidth);
+                
+                const dots = document.querySelectorAll('.ig-dot');
+                dots.forEach((dot, index) => {
+                    if(index === currentIndex) {
+                        dot.classList.add('active');
+                        dot.classList.add('bg-brand-blue');
+                        dot.classList.remove('bg-[#333]');
+                    } else {
+                        dot.classList.remove('active');
+                        dot.classList.remove('bg-brand-blue');
+                        dot.classList.add('bg-[#333]');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
