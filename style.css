@@ -1896,12 +1896,12 @@ video {
   font-size: 32px;
 }
 
-.text-\[40px\] {
-  font-size: 40px;
+.text-\[36px\] {
+  font-size: 36px;
 }
 
-.text-\[45px\] {
-  font-size: 45px;
+.text-\[40px\] {
+  font-size: 40px;
 }
 
 .text-\[48px\] {
@@ -2556,8 +2556,8 @@ video {
     flex-direction: row;
   }
 
-  .sm\:text-\[60px\] {
-    font-size: 60px;
+  .sm\:text-\[48px\] {
+    font-size: 48px;
   }
 
   .sm\:text-\[70px\] {
@@ -3167,6 +3167,10 @@ video {
     font-size: 70px;
   }
 
+  .lg\:text-\[75px\] {
+    font-size: 75px;
+  }
+
   .lg\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
@@ -3197,5 +3201,9 @@ video {
 
   .xl\:justify-between {
     justify-content: space-between;
+  }
+
+  .xl\:text-\[90px\] {
+    font-size: 90px;
   }
 }
