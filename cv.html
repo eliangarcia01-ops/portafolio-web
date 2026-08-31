@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHMK19DJ0H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZHMK19DJ0H');
+</script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>SYS.CV - Elian Garcia</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#ff5e00",
+                        "on-surface": "#e2e2e2",
+                        "on-surface-variant": "#888888",
+                        "brand-black": "#050505",
+                        "brand-charcoal": "#121212"
+                    },
+                    "fontFamily": {
+                        "headline": ["Syne", "sans-serif"],
+                        "body": ["Space Grotesk", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #050505; color: #e2e2e2; }
+        .glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .lab-border { border: 1px solid rgba(255, 94, 0, 0.2); }
+        .lab-border-b { border-bottom: 1px solid rgba(255, 94, 0, 0.2); }
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 0px; background: transparent; }
+
+        /* REGLAS ESTRICTAS PARA EXPORTACIÓN A PDF */
+        @media print {
+            @page { size: A4; margin: 10mm; }
+            body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; background-color: #050505 !important; }
+            .avoid-break { page-break-inside: avoid; break-inside: avoid; }
+            .print-grayscale { filter: grayscale(100%); }
+        }
+    </style>
+</head>
+<body class="font-body overflow-x-hidden selection:bg-primary-container selection:text-black">
+
+    <nav class="print:hidden fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-20 h-20 bg-brand-black/80 backdrop-blur-xl border-b border-primary-container/20 glass-nav">
+        <div class="flex items-center gap-2 select-none pointer-events-none opacity-60">
+            <span class="material-symbols-outlined text-primary-container text-sm md:text-base animate-pulse" style="font-variation-settings: 'FILL' 1;">north_west</span>
+            <span class="font-body text-[8px] md:text-[10px] text-on-surface-variant tracking-widest uppercase mt-0.5 font-bold">
+                SYS_CMD: TOCA EL LOGO PARA VOLVER
+            </span>
+        </div>
+        <a href="https://drive.google.com/file/d/1ktn1ADpNjHqYM7UzA0uXAjkFLy21Vius/view?usp=sharing" target="_blank" class="border border-primary-container text-primary-container font-body text-[10px] md:text-xs px-4 py-2 hover:bg-primary-container hover:text-black transition-all duration-300 font-bold tracking-widest uppercase cursor-pointer inline-block text-center">
+            DESCARGAR PDF
+        </a>
+    </nav>
+
+    <main class="w-full max-w-7xl mx-auto px-6 md:px-20 pt-32 md:pt-40 print:pt-10 pb-20 print:pb-0">
+        
+        <header class="w-full flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 lab-border-b pb-8 avoid-break">
+            <div>
+                <span class="font-body text-[10px] text-primary-container tracking-widest uppercase mb-4 block font-bold">REGISTRO_ACTIVO // CALI, COLOMBIA</span>
+                <h1 class="font-headline text-[56px] md:text-[96px] text-on-surface uppercase leading-none tracking-tighter mix-blend-difference">
+                    ELIAN <br/><span class="text-primary-container">GARCIA</span>
+                </h1>
+            </div>
+            <div class="mt-8 md:mt-0 text-left md:text-right">
+                <h2 class="font-headline text-2xl md:text-3xl uppercase text-on-surface mb-2">Director de Arte & <br/>Productor Digital</h2>
+                <div class="flex flex-col gap-1 mt-4">
+                    <a href="mailto:eliangarcia01@pasaportedelcambio.com" class="font-body text-xs text-on-surface-variant hover:text-primary-container transition-colors tracking-widest uppercase">ELIANGARCIA01@PASAPORTEDELCAMBIO.COM</a>
+                    <a href="https://www.linkedin.com/in/elian-garcia-herrera-a94875229/" target="_blank" class="font-body text-xs text-on-surface-variant hover:text-primary-container transition-colors tracking-widest uppercase">LINKEDIN.COM/IN/ELIANGARCIAHERRERA</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
+            
+            <div class="md:col-span-4 flex flex-col gap-12">
+                
+                <div class="relative bg-brand-charcoal p-6 lab-border avoid-break">
+                    <div class="absolute top-0 left-0 w-2 h-2 border-t border-l border-primary-container"></div>
+                    <div class="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-primary-container"></div>
+                    
+                    <div class="relative w-full aspect-square mb-6 border border-primary-container/30 bg-[#0a0a0a] group overflow-hidden">
+                        <div class="absolute top-2 left-2 w-2 h-2 border-t border-l border-primary-container z-10"></div>
+                        <div class="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-primary-container z-10"></div>
+                        <img src="https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1781052247/Gemini_Generated_Image_y9ppu6y9ppu6y9pp_xbqgtc.png" alt="Elian García" class="w-full h-full object-cover grayscale print-grayscale group-hover:grayscale-0 transition-all duration-500 relative z-0">
+                        <div class="absolute bottom-3 left-3 font-body text-[8px] bg-brand-black/90 text-primary-container px-2 py-1 tracking-widest uppercase z-10 font-bold border border-primary-container/20">
+                            USER_IMG // V.1.0
+                        </div>
+                    </div>
+
+                    <span class="font-body text-[10px] text-primary-container tracking-widest uppercase mb-4 block font-bold">[ SYS.INIT ]</span>
+                    <p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                        Enfoque innovador en publicidad digital centrado en una única visión estratégica. Opero en la intersección del modelado 3D, la dirección fotográfica técnica y el diseño UX/UI. Disciplina de reducción para construir identidades corporativas e interfaces que se niegan a pasar desapercibidas.
+                    </p>
+                </div>
+
+                <div class="avoid-break">
+                    <span class="font-body text-[10px] text-on-surface-variant tracking-widest uppercase mb-6 block border-b border-white/10 pb-2">SYS.MODULES // CAPACIDADES</span>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-headline text-lg text-on-surface uppercase mb-2">CGI & 3D (Blender)</h4>
+                        <ul class="font-body text-xs text-on-surface-variant space-y-2">
+                            <li><span class="text-primary-container mr-2">⸰</span>Texturizado PBR Avanzado</li>
+                            <li><span class="text-primary-container mr-2">⸰</span>Sistemas de Partículas & SSS</li>
+                            <li><span class="text-primary-container mr-2">⸰</span>Iluminación de Estudio (Cycles/HDRI)</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="font-headline text-lg text-on-surface uppercase mb-2">Dirección de Arte</h4>
+                        <ul class="font-body text-xs text-on-surface-variant space-y-2">
+                            <li><span class="text-primary-container mr-2">⸰</span>Identidad Visual y Branding</li>
+                            <li><span class="text-primary-container mr-2">⸰</span>Estrategia de Insight Único</li>
+                            <li><span class="text-primary-container mr-2">⸰</span>Fotografía Técnica (Low/High Key)</li>
+                            <li><span class="text-primary-container mr-2">⸰</span>Adobe Creative Suite (Ai, Ps, Ae, Pr)</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-headline text-lg text-on-surface uppercase mb-2">Desarrollo Web & UI</h4>
+                        <ul class="font-body text-xs text-on-surface-variant space-y-2">
+                            <li><span class="text-primary-container mr-2">⸰</span>Diseño de Interfaces (Figma)</li>
+                            <li><span class="text-primary-container mr-2">⸰</span>Estructuración de Experiencia (UX)</li>
+                            <li><span class="text-primary-container mr-2">⸰</span>Implementación Web Frontend</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="avoid-break">
+                    <span class="font-body text-[10px] text-on-surface-variant tracking-widest uppercase mb-6 block border-b border-white/10 pb-2">DATA_SOURCE // ACADÉMICO</span>
+                    
+                    <div class="mb-6">
+                        <h4 class="font-headline text-lg text-on-surface uppercase mb-1">Universidad Autónoma de Occidente</h4>
+                        <p class="font-body text-xs text-primary-container font-bold mb-2">PUBLICIDAD EN MEDIOS DIGITALES</p>
+                        <p class="font-body text-xs text-on-surface-variant">Modalidad Virtual. Enfoque en disrupción publicitaria, creación de campañas integrales y ecosistemas web.</p>
+                    </div>
+
+                    <div class="mb-6">
+                        <h4 class="font-headline text-lg text-on-surface uppercase mb-1">Fundación Academia de Dibujo Profesional</h4>
+                        <p class="font-body text-xs text-primary-container font-bold mb-2">DISEÑADOR GRÁFICO</p>
+                        <p class="font-body text-xs text-on-surface-variant">Formación integral en composición visual, fundamentos de diseño, tipografía y comunicación gráfica corporativa.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-headline text-lg text-on-surface uppercase mb-1">Fundación Academia de Dibujo Profesional</h4>
+                        <p class="font-body text-xs text-primary-container font-bold mb-2">DIPLOMADO UX/UI Y BRANDING</p>
+                        <p class="font-body text-xs text-on-surface-variant">Noviembre 2024. Especialización en la creación de identidades sólidas y diseño de interfaces web/móviles centradas en el usuario.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-8">
+                <span class="font-body text-[10px] text-on-surface-variant tracking-widest uppercase mb-8 block border-b border-white/10 pb-2">EXEC_LOG // OPERACIONES & PROYECTOS (CRONOLÓGICO)</span>
+                
+                <div class="flex flex-col gap-10 md:gap-12 border-l border-primary-container/20 pl-6 md:pl-8 relative">
+                    
+                    <div class="relative avoid-break">
+                        <div class="absolute -left-[27px] md:-left-[35px] top-1.5 w-2 h-2 bg-primary-container"></div>
+                        <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-2">
+                            <h3 class="font-headline text-2xl text-on-surface uppercase">A New Dynasty</h3>
+                            <span class="font-body text-[10px] bg-primary-container/10 text-primary-container px-2 py-1 uppercase tracking-widest font-bold w-fit">2026</span>
+                        </div>
+                        <p class="font-body text-xs text-on-surface-variant tracking-widest uppercase mb-4">DIRECCIÓN DE ARTE & CAMPAÑA DIGITAL</p>
+                        <p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                            Producción de campaña publicitaria conceptual para un hipotético partnership (Adidas x LeBron James). Desarrollo de lineamientos tipográficos brutalistas, moodboards técnicos y estructuración del feed para redes sociales maximizando el impacto visual.
+                        </p>
+                    </div>
+
+                    <div class="relative avoid-break">
+                        <div class="absolute -left-[27px] md:-left-[35px] top-1.5 w-2 h-2 bg-primary-container"></div>
+                        <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-2">
+                            <h3 class="font-headline text-2xl text-on-surface uppercase">El Gran Chofer</h3>
+                            <span class="font-body text-[10px] bg-primary-container/10 text-primary-container px-2 py-1 uppercase tracking-widest font-bold w-fit">2026</span>
+                        </div>
+                        <p class="font-body text-xs text-on-surface-variant tracking-widest uppercase mb-4">ESTRATEGIA DE MARKETING</p>
+                        <p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                            Formulación de estrategia de contenidos bajo el concepto "Jungla de Cemento". Consolidación de un ecosistema de campaña enfocado en un insight estratégico único para generar una comunicación directa y efectiva.
+                        </p>
+                    </div>
+
+                    <div class="relative avoid-break">
+                        <div class="absolute -left-[27px] md:-left-[35px] top-1.5 w-2 h-2 bg-primary-container"></div>
+                        <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-2">
+                            <h3 class="font-headline text-2xl text-on-surface uppercase">La Pureza de la Pausa</h3>
+                            <span class="font-body text-[10px] bg-primary-container/10 text-primary-container px-2 py-1 uppercase tracking-widest font-bold w-fit">2026</span>
+                        </div>
+                        <p class="font-body text-xs text-on-surface-variant tracking-widest uppercase mb-4">DIRECCIÓN DE ARTE & PRODUCCIÓN 3D</p>
+                        <p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                            Conceptualización y diseño de un entorno virtual y personaje 3D centrado en el silencio como disrupción ante la saturación digital. Arquitectura virtual en Blender Cycles con topología cuádruple optimizada y texturas PBR orgánicas.
+                        </p>
+                    </div>
+
+                    <div class="relative avoid-break">
+                        <div class="absolute -left-[27px] md:-left-[35px] top-1.5 w-2 h-2 bg-primary-container"></div>
+                        <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-2">
+                            <h3 class="font-headline text-2xl text-on-surface uppercase">Instinto Bajo Cero (Coronita)</h3>
+                            <span class="font-body text-[10px] bg-primary-container/10 text-primary-container px-2 py-1 uppercase tracking-widest font-bold w-fit">2026</span>
+                        </div>
+                        <p class="font-body text-xs text-on-surface-variant tracking-widest uppercase mb-4">CGI, FOTORREALISMO & DIRECCIÓN DE ARTE</p>
+                        <p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                            Disección óptica de la respuesta física ante el calor extremo. Producción CGI con iluminación Low-Key diseñada para resaltar texturas crudas y fotorrealismo sensorial. Despliegue técnico para formatos OOH.
+                        </p>
+                    </div>
+
+                    <div class="relative avoid-break">
+                        <div class="absolute -left-[27px] md:-left-[35px] top-1.5 w-2 h-2 bg-primary-container"></div>
+                        <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-2">
+                            <h3 class="font-headline text-2xl text-on-surface uppercase">Bancoomeva - Gestión de Cambio</h3>
+                            <span class="font-body text-[10px] bg-primary-container/10 text-primary-container px-2 py-1 uppercase tracking-widest font-bold w-fit">2025</span>
+                        </div>
+                        <p class="font-body text-xs text-on-surface-variant tracking-widest uppercase mb-4">DIRECCIÓN VISUAL & ESTRATEGIA CORPORATIVA</p>
+                        <p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                            Conceptualización y despliegue de estrategias de comunicación visual para el programa de transformación organizacional. Producción audiovisual de alto impacto para capacitación y cultura de marca. Diseño de sistemas gráficos integrales que garantizan la coherencia del mensaje en ecosistemas digitales internos.
+                        </p>
+                    </div>
+
+                    <div class="relative avoid-break">
+                        <div class="absolute -left-[27px] md:-left-[35px] top-1.5 w-2 h-2 bg-primary-container"></div>
+                        <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-2">
+                            <h3 class="font-headline text-2xl text-on-surface uppercase">Bancoomeva - Identidad Interna</h3>
+                            <span class="font-body text-[10px] bg-primary-container/10 text-primary-container px-2 py-1 uppercase tracking-widest font-bold w-fit">2024 - 2025</span>
+                        </div>
+                        <p class="font-body text-xs text-on-surface-variant tracking-widest uppercase mb-4">DISEÑO DE ACTIVOS & BRANDING CONCEPTUAL</p>
+                        <p class="font-body text-sm text-on-surface-variant leading-relaxed">
+                            Estructuración técnica de canales de comunicación interna (mailing masivo, señalética digital e infografías complejas). Desarrollo conceptual y visual para la creación de la mascota corporativa, diseñada para fortalecer el liderazgo y la cohesión en el entorno laboral.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html> 
