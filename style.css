@@ -907,6 +907,10 @@ video {
   width: 12rem;
 }
 
+.w-\[100\%\] {
+  width: 100%;
+}
+
 .w-\[110\%\] {
   width: 110%;
 }
@@ -1282,6 +1286,10 @@ video {
 
 .bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/djxkzpawz\/image\/upload\/v1778639860\/IMG_9386-HDR-2_u7teov\.jpg\'\)\] {
   background-image: url('https://res.cloudinary.com/djxkzpawz/image/upload/v1778639860/IMG_9386-HDR-2_u7teov.jpg');
+}
+
+.bg-\[url\(\'https\:\/\/res\.cloudinary\.com\/dpmby10ef\/image\/upload\/q_auto\/f_auto\/v1780423674\/render_twadui\.png\'\)\] {
+  background-image: url('https://res.cloudinary.com/dpmby10ef/image/upload/q_auto/f_auto/v1780423674/render_twadui.png');
 }
 
 .bg-gradient-to-t {
@@ -2285,6 +2293,11 @@ video {
   .md\:py-16 {
     padding-top: 4rem;
     padding-bottom: 4rem;
+  }
+
+  .md\:py-24 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 
   .md\:py-3 {
