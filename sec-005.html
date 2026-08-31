@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
+<head>
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dpmby10ef/image/upload/v1787598079/logo_u5nznw.png" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHMK19DJ0H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZHMK19DJ0H');
+    </script>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Caso de Estudio: BANCOOMEVA - Elian García</title>
+    
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Syne:wght@600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#ffdbce",
+                        "on-secondary-container": "#bab8b7",
+                        "primary": "#ffb599",
+                        "surface-dim": "#121414",
+                        "surface-container-highest": "#333535",
+                        "on-surface": "#e2e2e2",
+                        "background": "#121414",
+                        "on-surface-variant": "#e4bfb1",
+                        "primary-container": "#ff5e00",
+                        "brand-black": "#050505",
+                        "brand-charcoal": "#121212"
+                    },
+                    "spacing": {
+                        "margin-desktop": "60px",
+                        "margin-mobile": "20px",
+                        "section-gap": "100px",
+                        "unit": "8px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Syne", "sans-serif"],
+                        "label-caps": ["Space Grotesk", "sans-serif"],
+                        "display-xl": ["Syne", "sans-serif"],
+                        "headline-md": ["Syne", "sans-serif"],
+                        "headline-lg-mobile": ["Syne", "sans-serif"],
+                        "body-lg": ["Space Grotesk", "sans-serif"],
+                        "body-md": ["Space Grotesk", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "display-xl": ["100px", { "lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["40px", { "lineHeight": "44px", "fontWeight": "700" }],
+                        "body-lg": ["20px", { "lineHeight": "30px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #050505; color: #e2e2e2; }
+        .glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .lab-line { border-top: 1px solid rgba(255, 94, 0, 0.3); }
+        .lab-border { border: 1px solid rgba(255, 94, 0, 0.3); }
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 0px; background: transparent; }
+
+        #lightbox { transition: opacity 0.3s ease, visibility 0.3s ease; }
+        #lightbox.invisible { opacity: 0; pointer-events: none; }
+        #lightbox.visible { opacity: 1; pointer-events: auto; }
+        #lightbox-img { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+        .scale-enter { transform: scale(1); }
+        .scale-exit { transform: scale(0.95); }
+    </style>
+</head>
+<body class="font-body-md overflow-x-hidden selection:bg-primary-container selection:text-black">
+    
+    <nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop h-16 md:h-20 bg-background/80 dark:bg-background/80 backdrop-blur-xl border-b border-primary-container/20 glass-nav">
+        <a href="./index.html" class="flex items-center gap-2 select-none opacity-80 hover:opacity-100 transition-opacity">
+            <span class="material-symbols-outlined text-primary-container text-sm md:text-base animate-pulse" style="font-variation-settings: 'FILL' 1;">north_west</span>
+            <span class="font-label-caps text-[8px] md:text-[10px] text-on-surface-variant tracking-widest uppercase mt-0.5">
+                VOLVER AL INICIO
+            </span>
+        </a>
+
+        <div class="hidden md:flex gap-8 items-center">
+            <a class="text-primary-container font-bold border-b-2 border-primary-container pb-1 uppercase font-label-caps text-label-caps cursor-pointer" href="#concept" onclick="document.getElementById('concept').scrollIntoView({behavior: 'smooth'}); return false;">Estrategia</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-on-surface uppercase hover:text-primary-container transition-all duration-300 cursor-pointer" href="#gallery" onclick="document.getElementById('gallery').scrollIntoView({behavior: 'smooth'}); return false;">Piezas Gráficas</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-on-surface uppercase hover:text-primary-container transition-all duration-300 cursor-pointer" href="#video" onclick="document.getElementById('video').scrollIntoView({behavior: 'smooth'}); return false;">Audiovisual</a>
+        </div>
+
+        <a class="hidden md:inline-block px-5 py-2 md:py-3 bg-transparent border border-primary-container text-primary-container font-label-caps text-label-caps uppercase hover:bg-primary-container hover:text-black transition-all duration-300" 
+           href="./sec-001.html">
+            SIGUIENTE PROYECTO
+        </a>
+    </nav>
+
+    <main>
+        <section class="relative w-full h-[70vh] md:h-[80vh] min-h-[500px] md:min-h-[600px] flex flex-col pb-12 md:pb-16 px-margin-mobile md:px-margin-desktop pt-24" 
+                 style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-brand-charcoal/80 mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-black/40 to-transparent"></div>
+            
+            <div class="relative z-20 flex flex-col gap-2">
+                <span class="font-label-caps text-[10px] md:text-label-caps text-primary-container tracking-widest uppercase">[ CLIENTE: BANCOOMEVA ]</span>
+                <span class="font-label-caps text-[8px] md:text-[10px] text-on-surface-variant tracking-widest uppercase">OCTUBRE 2025 | COMUNICACIÓN CORPORATIVA</span>
+            </div>
+
+            <div class="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-start mt-auto pt-4">
+                <h1 class="font-display-xl text-[45px] sm:text-[60px] md:text-display-xl text-on-surface uppercase mb-0 leading-[0.95] max-w-full tracking-tighter">
+                    <span class="whitespace-nowrap block">TRANSFORMACIÓN</span>
+                    <span class="text-primary-container drop-shadow-lg whitespace-nowrap block">DIGITAL</span>
+                </h1>
+                <div class="mt-6 md:mt-8 flex flex-col md:flex-row gap-4 md:gap-12 items-start md:items-end w-full">
+                    <span class="font-label-caps text-[10px] md:text-label-caps text-primary-container tracking-widest uppercase shrink-0 mt-2">OBJETIVO.TXT</span>
+                    <p class="font-body-md md:font-body-lg text-sm md:text-body-lg text-on-surface-variant max-w-2xl border-l border-primary-container pl-4 md:pl-6 leading-relaxed md:leading-tight">
+                        Estrategia de comunicación interna diseñada para guiar a los colaboradores a través de las fases de <strong class="text-white">Expectativa, Lanzamiento y Refuerzo</strong>, posicionando la Biblioteca Virtual como un centro de recursos para la evolución profesional.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="w-full py-16 md:py-section-gap px-margin-mobile md:px-margin-desktop bg-brand-black overflow-hidden relative" id="gallery">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-10 md:mb-12 flex flex-col md:flex-row justify-between items-start md:items-end">
+                    <div>
+                        <span class="font-label-caps text-[10px] text-primary-container tracking-widest mb-3 block">COMUNICACIÓN VISUAL</span>
+                        <h2 class="font-headline-lg text-[32px] md:text-[56px] text-on-surface uppercase mb-1 leading-none tracking-tighter">Piezas Gráficas</h2>
+                    </div>
+                    <div class="mt-4 md:mt-0 px-3 py-1.5 border border-primary-container/30 bg-primary-container/5">
+                        <p class="font-label-caps text-[8px] md:text-[10px] text-primary-container font-bold uppercase tracking-widest">ESTADO: ACTIVOS</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 relative">
+                    <div class="md:col-span-4 relative group cursor-pointer overflow-hidden border border-primary-container/30 bg-brand-charcoal aspect-[4/5] hover:border-primary-container transition-all duration-500" 
+                         onclick="openLightbox('https://res.cloudinary.com/djxkzpawz/image/upload/v1770075054/Mesa-de-trabajo-3_2x_oyqv6d.png')">
+                        <img alt="Story Lanzamiento" class="absolute inset-0 w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" src="https://res.cloudinary.com/djxkzpawz/image/upload/v1770075054/Mesa-de-trabajo-3_2x_oyqv6d.png"/>
+                        <div class="absolute top-4 left-4 font-label-caps text-[10px] text-brand-black bg-primary-container px-2 py-1 z-30 font-bold tracking-widest transition-transform md:group-hover:translate-x-2">
+                            01 / STORY LANZAMIENTO
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-full p-4 md:p-6 bg-gradient-to-t from-brand-black via-brand-black/90 to-transparent md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-500 z-20">
+                            <span class="font-label-caps text-[8px] text-primary-container tracking-widest uppercase mb-1 md:mb-2 block">FORMATO VERTICAL</span>
+                            <p class="font-body-md text-xs md:text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-200">
+                                Pieza diseñada para canales internos, enfocada en la usabilidad y la rápida asimilación de la Biblioteca Virtual.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-4 relative group cursor-pointer overflow-hidden border border-primary-container/30 bg-brand-charcoal aspect-[4/5] md:translate-y-6 hover:border-primary-container transition-all duration-500"
+                         onclick="openLightbox('https://res.cloudinary.com/djxkzpawz/image/upload/v1770689413/Mesa-de-trabajo-2_hyyrhr.png')">
+                        <img alt="Post Cuadrado" class="absolute inset-0 w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" src="https://res.cloudinary.com/djxkzpawz/image/upload/v1770689413/Mesa-de-trabajo-2_hyyrhr.png"/>
+                        <div class="absolute top-4 left-4 font-label-caps text-[10px] text-brand-black bg-primary-container px-2 py-1 z-30 font-bold tracking-widest transition-transform md:group-hover:translate-x-2">
+                            02 / POST CARRUSEL
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-full p-4 md:p-6 bg-gradient-to-t from-brand-black via-brand-black/90 to-transparent md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-500 z-20">
+                            <span class="font-label-caps text-[8px] text-primary-container tracking-widest uppercase mb-1 md:mb-2 block">FORMATO FEED</span>
+                            <p class="font-body-md text-xs md:text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-200">
+                                Despliegue gráfico cuadrado para intranet. Comunicación directa sobre el beneficio del nuevo ecosistema digital.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-4 relative group cursor-pointer overflow-hidden border border-primary-container/30 bg-brand-charcoal aspect-[4/5] hover:border-primary-container transition-all duration-500"
+                         onclick="openLightbox('https://res.cloudinary.com/djxkzpawz/image/upload/v1770844139/Mesa-de-trabajo1_wcmxos.png')">
+                        <img alt="Banner Wide" class="absolute inset-0 w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700" src="https://res.cloudinary.com/djxkzpawz/image/upload/v1770844139/Mesa-de-trabajo1_wcmxos.png"/>
+                        <div class="absolute top-4 left-4 font-label-caps text-[10px] text-brand-black bg-primary-container px-2 py-1 z-30 font-bold tracking-widest transition-transform md:group-hover:translate-x-2">
+                            03 / BANNER EMAIL
+                        </div>
+                        <div class="absolute bottom-0 left-0 w-full p-4 md:p-6 bg-gradient-to-t from-brand-black via-brand-black/90 to-transparent md:translate-y-full md:group-hover:translate-y-0 transition-transform duration-500 z-20">
+                            <span class="font-label-caps text-[8px] text-primary-container tracking-widest uppercase mb-1 md:mb-2 block">FORMATO MAILING</span>
+                            <p class="font-body-md text-xs md:text-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-200">
+                                Cabecera estratégica para correos corporativos. Refuerza el mensaje de evolución profesional.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="w-full py-16 md:py-section-gap px-margin-mobile md:px-margin-desktop bg-brand-charcoal relative" id="video">
+            <div class="absolute top-0 left-0 w-full h-px bg-primary-container/20"></div>
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 pb-6 lab-line">
+                    <h2 class="font-headline-lg text-[40px] md:text-[64px] text-on-surface uppercase tracking-tighter leading-none max-w-2xl mt-4 md:mt-0">
+                        Videos de<br/><span class="text-primary-container text-[24px] md:text-[36px] block mt-1 md:mt-2 tracking-normal">Impulso</span>
+                    </h2>
+                    <div class="text-left md:text-right mt-4 md:mt-0 opacity-50 md:opacity-100">
+                        <span class="font-label-caps text-[8px] md:text-[10px] text-primary-container block tracking-widest">MÓDULO: AUDIOVISUAL</span>
+                        <span class="font-label-caps text-[8px] md:text-[10px] text-on-surface-variant block tracking-widest mt-1">CAPACITACIÓN CORPORATIVA</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12">
+                    <div class="group">
+                        <div class="w-full aspect-video bg-black rounded-sm border border-primary-container/30 relative overflow-hidden mb-4 md:mb-6 shadow-[0_0_30px_rgba(255,94,0,0.1)] group-hover:border-primary-container transition-colors duration-500">
+                            <div class="absolute inset-0 bg-brand-charcoal animate-pulse z-0"></div>
+                            <iframe 
+                                src="https://drive.google.com/file/d/1fkCjCjYz9yKHa-S7BUtmNWvpBU1za1Ey/preview" 
+                                class="absolute inset-0 w-full h-full z-10 grayscale-[50%] hover:grayscale-0 transition-all duration-500" 
+                                frameborder="0" 
+                                loading="lazy"
+                                allow="autoplay; encrypted-media" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="border-l-2 border-primary-container pl-4">
+                            <span class="font-label-caps text-[10px] text-primary-container tracking-widest uppercase block mb-1">ACTIVO 01 // OVERVIEW</span>
+                            <h3 class="font-headline-md text-xl md:text-2xl text-white uppercase mb-2">Spot Principal</h3>
+                            <p class="font-body-md text-sm text-on-surface-variant">
+                                Video resumen de la campaña de la Biblioteca Virtual. Genera expectativa y presenta el ecosistema como una herramienta de evolución.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="group">
+                        <div class="w-full aspect-video bg-black rounded-sm border border-primary-container/30 relative overflow-hidden mb-4 md:mb-6 shadow-[0_0_30px_rgba(255,94,0,0.1)] group-hover:border-primary-container transition-colors duration-500">
+                            <div class="absolute inset-0 bg-brand-charcoal animate-pulse z-0"></div>
+                            <iframe 
+                                src="https://drive.google.com/file/d/1W3IszY3aIABL75cBCUwPQz4YRAOUqxWw/preview" 
+                                class="absolute inset-0 w-full h-full z-10 grayscale-[50%] hover:grayscale-0 transition-all duration-500" 
+                                frameborder="0" 
+                                loading="lazy"
+                                allow="autoplay; encrypted-media" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="border-l-2 border-primary-container pl-4">
+                            <span class="font-label-caps text-[10px] text-primary-container tracking-widest uppercase block mb-1">ACTIVO 02 // TUTORIAL</span>
+                            <h3 class="font-headline-md text-xl md:text-2xl text-white uppercase mb-2">Reel Introductorio</h3>
+                            <p class="font-body-md text-sm text-on-surface-variant">
+                                Material videográfico con enfoque explicativo. Traduce procesos internos complejos en información digerible y visualmente dinámica.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Redirección al CV -->
+        <a class="w-full h-[40vh] md:h-[50vh] bg-primary-container flex justify-center items-center group hover:bg-white transition-colors duration-700 relative overflow-hidden block"
+           href="https://sites.google.com/pasaportedelcambio.com/digital/cv" target="_blank">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.1)_0%,transparent_100%)] pointer-events-none"></div>
+            
+            <div class="relative z-10 font-headline-lg text-[48px] sm:text-[70px] md:text-[100px] text-brand-black uppercase text-center font-black tracking-tighter w-full block leading-none group-hover:scale-[1.02] transition-transform duration-500 mix-blend-multiply px-4">
+                VER<br/>MI CV<br/>COMPLETO
+            </div>
+            
+            <div class="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 font-label-caps text-[8px] md:text-[10px] text-brand-black tracking-widest uppercase opacity-50 group-hover:opacity-100 transition-opacity whitespace-nowrap font-bold">
+                [ ABRIR CURRÍCULUM VITAE ]
+            </div>
+        </a>
+
+    </main>
+
+    <footer class="w-full py-12 md:py-16 px-margin-mobile md:px-margin-desktop flex flex-col items-center text-center gap-unit bg-brand-black border-t border-primary-container/20 relative">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-6 md:h-8 bg-primary-container/30"></div>
+        <h2 class="font-headline-lg text-[20px] md:text-[28px] font-black text-on-surface uppercase mb-6 md:mb-8 tracking-tighter mt-4 md:mt-0">
+            BANCOOMEVA<br/>
+            <span class="text-primary-container text-xs md:text-sm font-body-lg font-normal tracking-[0.3em] mt-1 block opacity-80">TRANSFORMACIÓN DIGITAL</span>
+        </h2>
+        
+        <div class="flex flex-wrap justify-center gap-6 md:gap-10 mb-8 md:mb-10">
+            <a class="text-on-surface-variant font-label-caps text-[10px] hover:text-primary-container transition-colors duration-300 uppercase tracking-widest" href="#">Instagram</a>
+            <a class="text-on-surface-variant font-label-caps text-[10px] hover:text-primary-container transition-colors duration-300 uppercase tracking-widest" href="#">Behance</a>
+            <a class="text-on-surface-variant font-label-caps text-[10px] hover:text-primary-container transition-colors duration-300 uppercase tracking-widest" href="#">LinkedIn</a>
+        </div>
+        <p class="font-label-caps text-[8px] md:text-[10px] text-on-surface-variant uppercase tracking-widest opacity-40">
+            SYS.LOG ©2026 ELIAN GARCÍA. CALI, COLOMBIA. FIN DE ARCHIVO.
+        </p>
+    </footer>
+
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-brand-black/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-12 invisible" aria-hidden="true" onclick="handleBackdropClick(event)">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-primary-container hover:text-white transition-colors z-50">
+            <span class="material-symbols-outlined !text-4xl" style="font-variation-settings: 'FILL' 1;">close</span>
+        </button>
+        <div class="relative max-w-full max-h-full">
+            <img id="lightbox-img" src="" alt="Vista completa" class="max-w-full max-h-[85vh] object-contain border border-primary-container/30 shadow-[0_0_50px_rgba(255,94,0,0.15)] scale-exit select-none">
+            <div class="absolute top-0 left-0 w-4 h-4 border-l border-t border-primary-container pointer-events-none"></div>
+            <div class="absolute top-0 right-0 w-4 h-4 border-r border-t border-primary-container pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 w-4 h-4 border-l border-b border-primary-container pointer-events-none"></div>
+            <div class="absolute bottom-0 right-0 w-4 h-4 border-r border-b border-primary-container pointer-events-none"></div>
+        </div>
+    </div>
+
+    <script>
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.classList.remove('invisible');
+            setTimeout(() => {
+                lightbox.classList.add('visible');
+                lightboxImg.classList.remove('scale-exit');
+                lightboxImg.classList.add('scale-enter');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            lightbox.classList.remove('visible');
+            lightboxImg.classList.remove('scale-enter');
+            lightboxImg.classList.add('scale-exit');
+            setTimeout(() => {
+                lightbox.classList.add('invisible');
+                lightboxImg.src = ''; 
+            }, 300);
+            document.body.style.overflow = '';
+        }
+        function handleBackdropClick(event) { if (event.target === lightbox) { closeLightbox(); } }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape" && lightbox.classList.contains('visible')) { closeLightbox(); }
+        });
+    </script>
+</body>
+</html>
