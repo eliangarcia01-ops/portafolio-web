@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html class="dark" lang="es">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHMK19DJ0H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dpmby10ef/image/upload/v1787598079/logo_u5nznw.png" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZHMK19DJ0H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-ZHMK19DJ0H');
-</script>
+      gtag('config', 'G-ZHMK19DJ0H');
+    </script>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>SYS.CV - Elian Garcia</title>
@@ -58,12 +59,14 @@
 <body class="font-body overflow-x-hidden selection:bg-primary-container selection:text-black">
 
     <nav class="print:hidden fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-20 h-20 bg-brand-black/80 backdrop-blur-xl border-b border-primary-container/20 glass-nav">
-        <div class="flex items-center gap-2 select-none pointer-events-none opacity-60">
+        <!-- BOTÓN CORREGIDO PARA VOLVER AL INICIO -->
+        <a href="./index.html" class="flex items-center gap-2 select-none opacity-80 hover:opacity-100 transition-opacity cursor-pointer">
             <span class="material-symbols-outlined text-primary-container text-sm md:text-base animate-pulse" style="font-variation-settings: 'FILL' 1;">north_west</span>
             <span class="font-body text-[8px] md:text-[10px] text-on-surface-variant tracking-widest uppercase mt-0.5 font-bold">
-                SYS_CMD: TOCA EL LOGO PARA VOLVER
+                VOLVER AL INICIO
             </span>
-        </div>
+        </a>
+        
         <a href="https://drive.google.com/file/d/1ktn1ADpNjHqYM7UzA0uXAjkFLy21Vius/view?usp=sharing" target="_blank" class="border border-primary-container text-primary-container font-body text-[10px] md:text-xs px-4 py-2 hover:bg-primary-container hover:text-black transition-all duration-300 font-bold tracking-widest uppercase cursor-pointer inline-block text-center">
             DESCARGAR PDF
         </a>
@@ -248,4 +251,4 @@
     </main>
 
 </body>
-</html> 
+</html>
